@@ -24,6 +24,8 @@ int main(){
 
         switch (choice){
             case 1:
+                printf("Enter a number: ");
+                scanf("%d", &num);
                 checkGreater(num);
                 break;
             case 2:
