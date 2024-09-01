@@ -8,7 +8,7 @@ int main(){
 
     do{
         printf("=====MENU=====\n");
-        printf("1.Check if a number is greater than 13.\n");
+        printf("1.Check if a number is not greater than 13.\n");
         printf("2. Check if a number is divisible by 3 but not divisible by 7\n");
         printf("3. Check if a number belongs to the pattern (1,5,9,13,17,25,29,33,...)\n");
         printf("4. Check if a character is a hexadecimal character.\n");
