@@ -1,37 +1,66 @@
 #include <stdio.h>
-int getFactorial(int x);
-int getSummation (int x);
+#include "Activity3.c"
 
 int main(){
 
-    int num, result;
+    int x,y,choice,skip, position, result;
+    char ch[20];
 
-    printf("Enter a number: ");
-    scanf("%d", &num);
-    result = getFactorial(num);
-    printf("Result = %d\n", result);
+    printf("=====MENU=====\n");
+    printf("[1] Factorial A\n[2] Factorial B\n[3] Summation A\n");
+    printf("[4] Summation B\n [5]Skip Count by X to Y\n [6] Total Consonants\n [7]Exit\n\n");
 
-    printf("Enter a number: ");
-    scanf("%d", &num);
-    result = getSummation(num);
-    printf("Result = %d", result);
+    do{
+        printf("Enter choice: ");
+        scanf("%d", &choice);
 
-    return 0;
-}
-
-int getFactorial(int x){
-        if(x>=1){
-            return x * getFactorial(x-1);
-        }else{
-            return 1;
+        switch(choice){
+            case 1:
+                printf("Enter x: ");
+                scanf("%d", &x);
+                result = factorialA(x);
+                printf("Result = %d", result);
+                break;
+            case 2: 
+                printf("Enter x: ");
+                scanf("%d", &x);
+                printf("Enter y: ");
+                scanf("%d", &y);
+                result = factorialB(x,y);
+                printf("Result: %d", result);
+                break;
+            case 3: 
+                printf("Enter x: ");
+                scanf("%d", &x);
+                result = summationA(x);
+                printf("Result = %d", result);
+                break;
+            case 4: 
+                printf("Enter x: ");
+                scanf("%d", &x);
+                printf("Enter y: ");
+                scanf("%d", &y);
+                result = summationB(x,y);
+                printf("Result: %d", result);
+                break;
+            case 5:
+                printf("Enter x: ");
+                scanf("%d", &x);
+                printf("Enter y: ");
+                scanf("%d", &y);
+                printf("Enter skip: ");
+                scanf("%d", &skip);
+                skipCountbyXtoY(x,y,skip);
+                break;
+            case 6:
+                printf("Enter a string: ");
+                scanf(" %s", ch);
+                result = totalconsonants(ch, 0);
+                break;
+            default:
+                printf("Invalid choice. Please try again!\n\n");
         }
-    return 0;
-}
+    }while(choice != 7);
 
-int getSummation(int x){
-    if(x>0){
-        return x + getSummation(x-1);
-    }else{
-        return 0;
-    }
+    return 0;
 }
